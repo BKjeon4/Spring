@@ -1,0 +1,8 @@
+package aDIex1_xml1;
+
+public interface MEssageBean {
+	public void sayHello(String name) {
+		System.out.println(name "님 안녕");
+	}
+
+}

@@ -1,0 +1,6 @@
+package aDIex1_xml1;
+
+public interface MEssageBean {
+	void sayHello(String name);
+
+}

@@ -1,0 +1,9 @@
+package aop1_xml;
+
+
+public class LoggingAdvice {
+
+	public void before(Joinpoint point)throws Throwable {
+		point.get
+	}
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.springframework.org/schema/beans">
+
+	<!-- 자동 빈 생성 -->
+
+
+	<context:component-scan	base-package="board.impl" />
+
+	<!-- DataSource 설정 -->
+
+
+	<context:property-placeholder location="classpath:config/db.properties" />
+
+
+
+	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource">
+
+		<property value="${jdbc.driver}" name="driverClassName" />
+
+		<property value="${jdbc.url}" name="url" />
+
+		<property value="${jdbc.username}" name="username" />
+
+		<property value="${jdbc.password}" name="password" />
+
+	</bean>
+
+	<!-- Spring과 Mybatis 연동 설정 -->
+
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSession">
+
+		<property name="dataSource" ref="dataSource" />
+
+		<property value="classpath:mybatis-config.xml" name="configLocation" />
+		<property name="mapperLocations" value='classpath:mappings/board-mapping.xml'></property>
+
+	</bean>
+
+
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+
+		<constructor-arg ref="sqlSession" />
+
+	</bean>
+
+</beans>

@@ -1,0 +1,12 @@
+package aDIex1_xml1;
+
+public class MessageBeanEnImpl implements MessageBean {
+
+	@Override
+	public void sayHello(String name) {
+
+		System.out.println("Hi~~" + name);
+
+	}
+
+}

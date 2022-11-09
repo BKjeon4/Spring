@@ -1,0 +1,11 @@
+package aDIex1_xml1;
+
+public class MessageBeanEnImpl implements MEssageBean {
+
+	@Override
+	public void sayHello(String name) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

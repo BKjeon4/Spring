@@ -1,0 +1,9 @@
+package aDIex1_xml1;
+
+public class MessageBeanKoImpl implements MessageBean{
+	// 오버 라이딩 필수
+	public void sayHello(String name) {
+		System.out.println(name + "님 안녕");
+	}
+
+}
