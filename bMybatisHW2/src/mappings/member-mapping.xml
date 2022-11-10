@@ -1,0 +1,18 @@
+<mapper namespace="member-mapping">
+
+<insert id="insertmember" parameterType="member.vo.MemberVO">
+
+INSERT INTO member(userid, userpass, username) VALUES(#{userid},#{userpass},#{username})
+
+</insert>
+<!-- 마이바티즈 값 지정시
+	-${변수} : Statement 객체를 이용
+	-#{변수} : preparedStatement 객체를 이용
+			문자열인 경우 자동으로 '' 지정
+ -->
+
+<select id="getMemberList" parameterType="member" resultType="member">
+SELECT * FROM member
+</select>
+
+</mapper>
